@@ -7,10 +7,8 @@
 
 ## 시퀀스 다이어그램
 
-### 도서 대출 및 반납 프로세스
-
-mermaid
 sequenceDiagram
+
     participant User as 사용자
     participant UI as 사용자 인터페이스
     participant LMS as 도서관관리시스템
@@ -51,7 +49,6 @@ sequenceDiagram
         LMS-->>UI: 대출 실패 (회원 정보 오류)
         UI-->>User: 오류 메시지
     end
-```
 
 주요 기능
 
