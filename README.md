@@ -53,58 +53,6 @@ sequenceDiagram
     end
 ```
 
-## 시스템 구조
-
-### 클래스 다이어그램
-
-```
-┌─────────────────┐    ┌─────────────────┐
-│      Book       │    │     Member      │
-├─────────────────┤    ├─────────────────┤
-│ - book_id       │    │ - member_id     │
-│ - title         │    │ - name          │
-│ - author        │    │ - email         │
-│ - is_available  │    │ - borrowed_books│
-├─────────────────┤    ├─────────────────┤
-│ + borrow()      │    │ + can_borrow()  │
-│ + return_book() │    │ + add_borrowed  │
-└─────────────────┘    └─────────────────┘
-         │                       │
-         └───────┐       ┌───────┘
-                 │       │
-         ┌─────────────────┐
-         │    Database     │
-         ├─────────────────┤
-         │ - books         │
-         │ - members       │
-         │ - borrow_records│
-         ├─────────────────┤
-         │ + add_book()    │
-         │ + get_book()    │
-         │ + search_books()│
-         └─────────────────┘
-                 │
-         ┌─────────────────┐
-         │LibraryManagement│
-         │     System      │
-         ├─────────────────┤
-         │ - database      │
-         ├─────────────────┤
-         │ + search_book() │
-         │ + borrow_book() │
-         │ + return_book() │
-         └─────────────────┘
-                 │
-         ┌─────────────────┐
-         │ UserInterface   │
-         ├─────────────────┤
-         │ - library_system│
-         ├─────────────────┤
-         │ + display_*()   │
-         │ + *_interface() │
-         └─────────────────┘
-```
-
 주요 기능
 
 1. 도서 관리
